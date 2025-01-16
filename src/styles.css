@@ -1,9 +1,15 @@
+html,
 body {
-    font-family: Arial, sans-serif;
-  }
-  .quote-list {
-    margin-top: 20px;
-  }
-  .quote-item {
-    margin: 10px 0;
-  }
+  height: 100%;
+}
+
+body {
+  background-image: url('./img/backgroung-img.png');
+  font-family: Arial, sans-serif;
+}
+.quote-list {
+  margin-top: 20px;
+}
+.quote-item {
+  margin: 10px 0;
+}
