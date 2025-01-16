@@ -1,11 +1,14 @@
 import "./styles.css";
 import navBar from "./nav.js";
+import randomQuoteView from "./random-quote-view.js";
 import '../node_modules/modern-normalize/modern-normalize.css';
 
 const bodyParser = require("body-parser");
 
 const body = document.querySelector("body");
 body.appendChild(navBar);
+body.appendChild(randomQuoteView);
+
 
 
 // const apiUrl = 'http://localhost:3000/quotes'; // The server URL
