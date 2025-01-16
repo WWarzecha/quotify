@@ -1,5 +1,5 @@
 import "./random-quote-view.css"
-import apiUrl from "./api-url.js";
+import apiUrl from "../../api-url.js";
 
 const quoteContainer = (() => {
     const div = document.createElement("div");

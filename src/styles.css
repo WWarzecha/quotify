@@ -17,3 +17,8 @@ body {
 .quote-item {
   margin: 10px 0;
 }
+
+.view-container {
+  display: flex;
+  justify-content: center;
+}

@@ -14,6 +14,7 @@ const createButton = ((text) => {
     btn.type = "button";
     btn.textContent = text;
     btn.classList.add("nav-button");
+    btn.classList.add(text.toLowerCase());
     return btn;
 });
 
