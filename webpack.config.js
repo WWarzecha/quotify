@@ -1,11 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { Script } = require('vm');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+        clean: true,
     },
     mode: 'development',
     module: {
@@ -25,6 +27,19 @@ module.exports = {
                 },
             },
         ],
+    },
+    resolve: {
+        fallback: {
+            "fs": false,
+            "path": false,
+            "zlib": false,
+            "stream": false,
+            "querystring": false,
+            "buffer": false,
+            "async_hooks": false,
+            "assert": false,
+            "util": false
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({
