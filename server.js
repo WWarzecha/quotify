@@ -66,7 +66,6 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ message: 'Quote added', quote: newQuote }));
       });
     } else if (pathname === '/quotes' && req.method === 'DELETE') {
-      // Handle DELETE request: Remove a quote (based on its index in the array)
       const { id } = parsedUrl.query;
       if (!id) {
         res.statusCode = 400;
@@ -81,7 +80,6 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200;
       res.end(JSON.stringify({ message: 'Quote deleted' }));
     } else if (pathname === '/quotes' && req.method === 'PUT') {
-      // Handle PUT request: Update a quote (based on its ID)
       let body = '';
       req.on('data', chunk => {
         body += chunk;
