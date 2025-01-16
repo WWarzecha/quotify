@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .quote-list {
+    margin-top: 20px;
+  }
+  .quote-item {
+    margin: 10px 0;
+  }
