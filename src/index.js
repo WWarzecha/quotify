@@ -23,4 +23,5 @@ navRandomButton.onclick = () => switchView(randomQuoteView);
 const navManageButton = document.querySelector(".nav-button.manage")
 navManageButton.onclick = () => switchView(manageQuotesView);
 
-window.onload = () => switchView(randomQuoteView);
+// window.onload = () => switchView(randomQuoteView);
+window.onload = () => switchView(manageQuotesView);

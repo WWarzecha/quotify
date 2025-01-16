@@ -21,4 +21,5 @@ body {
 .view-container {
   display: flex;
   justify-content: center;
+  width: 80%;
 }

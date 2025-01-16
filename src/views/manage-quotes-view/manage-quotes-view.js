@@ -1,4 +1,4 @@
-import "./manage-quotes-view.js"
+import "./manage-quotes-view.css"
 import apiUrl from "../../api-url.js";
 
 const quotesContainer = (() => {
@@ -9,6 +9,7 @@ const quotesContainer = (() => {
 
 const addQuoteButton = (() => {
     const btn = document.createElement("button");
+    btn.classList.add("add-button");
     btn.type = "button";
     btn.textContent = "Add Quote";
     btn.onclick = addQuote;
@@ -62,59 +63,31 @@ async function getQuotes() {
     quoteDiv.classList.add("quote-item");
 
     const quoteText = document.createElement("span");
-    quoteText.textContent = quote.text;
+    quoteText.textContent = "\"" + quote.text + "\"";
     quoteDiv.appendChild(quoteText);
+
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttons-container");
 
     const deleteQuoteButton = document.createElement("button");
     deleteQuoteButton.type = "button";
     deleteQuoteButton.textContent = "Delete";
     deleteQuoteButton.onclick = () => deleteQuote(quote.id);
-    quoteDiv.appendChild(deleteQuoteButton);
+    buttonsContainer.appendChild(deleteQuoteButton);
 
     const updateQuoteButton = document.createElement("button");
     updateQuoteButton.type = "button";
     updateQuoteButton.textContent = "Change";
     updateQuoteButton.onclick = () => updateQuote(quote.id);
-    quoteDiv.appendChild(updateQuoteButton);
+    buttonsContainer.appendChild(updateQuoteButton);
+
+    quoteDiv.appendChild(buttonsContainer);
 
     quotesContainer.appendChild(quoteDiv);
   })
 }
 
-
-
-// // Function to fetch and display all quotes
-
-
-// // Function to add a new quote
-// document.getElementById('addQuoteBtn').addEventListener('click', async () => {
-//   const quoteText = document.getElementById('quoteText').value;
-//   if (quoteText) {
-//     const newQuote = {
-//       id: Date.now(), // Create a unique ID based on timestamp
-//       text: quoteText
-//     };
-//     await fetch(apiUrl, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(newQuote)
-//     });
-//     document.getElementById('quoteText').value = ''; // Clear the input
-//     getQuotes(); // Refresh the quotes list
-//   } else {
-//     alert("Please enter a quote!");
-//   }
-// });
-
-
-
-// // Load the quotes when the page loads
-// window.onload = getQuotes;
-
-
-const randomQuoteView = (() => {
+const manageQuotesView = (() => {
     const viewDiv = document.createElement("div");
     viewDiv.classList.add("manage-view-div");
     viewDiv.appendChild(addQuoteButton);
@@ -124,4 +97,4 @@ const randomQuoteView = (() => {
     return viewDiv;
 })();
 
-export default randomQuoteView;
+export default manageQuotesView;

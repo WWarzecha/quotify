@@ -1,0 +1,48 @@
+.manage-view-div {
+    width: 100%;
+    background-color: rgba(129, 125, 119, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+}
+
+.quotes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote-item {
+    background-color: rgba(129, 125, 119, 0.8);
+    color: antiquewhite;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+}
+
+.quote-item span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-wrap-mode: wrap;
+}
+
+.manage-view-div button {
+    background-color: rgba(129, 125, 119, 1);
+    border: none;
+    color: rgb(55, 53, 49);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+    border: 1px solid rgb(55, 53, 49);
+}
+
+.manage-view-div button:hover {
+    background-color: rgb(184, 179, 170);
+    color: rgb(55, 53, 49);
+    cursor: pointer;
+    
+}
