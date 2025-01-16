@@ -34,9 +34,18 @@ const server = http.createServer((req, res) => {
     } 
     else if(pathname === '/quotes/random' && req.method === 'GET'){
       const quotes = readQuotesFromFile();
-      const random_index = Math.floor(Math.random() * Object.keys(quotes).length);
-      console.log(random_index, Math.random(), Object.keys(quotes).length);
-      let randomQuote = quotes[random_index];
+      const range = Object.keys(quotes).length;
+      let randomQuote;
+      if(range > 0){
+        const random_index = Math.floor(Math.random() * range);
+        console.log(random_index, Math.random(), Object.keys(quotes).length);
+        randomQuote = quotes[random_index];
+      }
+      else{
+        let id = null;
+        let text = "No quotes avaible";
+        randomQuote = {id, text};
+      }
   
       res.statusCode = 200;
       res.end(JSON.stringify(randomQuote));

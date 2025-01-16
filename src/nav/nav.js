@@ -1,4 +1,4 @@
-import logoImg from "./img/quotify-high-resolution-logo-transparent.svg";
+import logoImg from "../img/quotify-high-resolution-logo-transparent.svg";
 import "./nav-styles.css";
 
 const logo = (() => {
